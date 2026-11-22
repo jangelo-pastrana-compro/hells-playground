@@ -1,0 +1,4 @@
+{"rules":{".read":false,".write":false,
+ "users":{"$uid":{".read":"auth != null && auth.uid == $uid",".write":"auth != null && auth.uid == $uid"}},
+ "usernames":{".read":true,"$n":{".write":"auth != null && !data.exists() && newData.val() == auth.uid"}},
+ "rooms":{"$room":{".read":"auth != null",".write":"auth != null"}}}}

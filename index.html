@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Hell's Playground</title><link rel="stylesheet" href="style.css"></head><body>
+<div id="app">
+<canvas id="cv" width="960" height="540"></canvas>
+<canvas id="bg" width="960" height="540"></canvas>
+<div id="hud" class="hide"><span id="hl"></span><span><button id="bsv" data-a="save">SAVE</button><button id="bps" data-a="pause">II</button></span></div>
+<div id="touch" class="hide"><div><button id="tl">&#9664;</button><button id="tr">&#9654;</button></div><button id="tj">&#9650;</button></div>
+
+<section id="s_tap" class="scr blk"><button class="b" data-a="tap">TAP TO START</button></section>
+<section id="s_open" class="scr blk"><img id="logo" src="assets/logo.png" alt="ACJ Games"><p id="devby">DEVELOPED BY A.C.J GAMES</p></section>
+<section id="s_load" class="scr"><img class="full" src="assets/loading.png" alt=""><canvas id="lc" width="1672" height="941"></canvas><div id="lbar"><i id="lfill"></i></div></section>
+
+<section id="s_login" class="scr"><div class="arch"><h1>HELL'S<br>PLAYGROUND</h1>
+<input id="em" type="email" placeholder="Email" autocomplete="email"><input id="un" class="hide" placeholder="Username (3-14 letters/numbers)" maxlength="14" autocomplete="username"><input id="pw" type="password" placeholder="Password (6+ characters)" autocomplete="current-password">
+<button class="b" data-a="login" id="blogin">LOG IN</button><button class="b alt" data-a="toreg" id="breg">NEW? CREATE ACCOUNT</button><button class="b alt" data-a="forgot">FORGOT PASSWORD</button><p id="lmsg" class="msg"></p></div></section>
+
+<section id="s_menu" class="scr"><div class="arch"><h1>HELL'S<br>PLAYGROUND</h1><p class="who" id="who"></p>
+<button class="b" data-a="go" data-g="s_start">START</button><button class="b" data-a="hist">HISTORY</button><button class="b" data-a="opts" data-r="s_menu">OPTION</button><button class="b" data-a="credits">CREDITS</button><button class="b" data-a="logout">LOGOUT</button></div></section>
+
+<section id="s_start" class="scr"><div class="arch"><h2>CHOOSE</h2>
+<button class="b" data-a="play">PLAY</button><button class="b" data-a="cont" id="bcont">CONTINUE</button><button class="b" data-a="go" data-g="s_mp">MULTIPLAYER</button><button class="b" data-a="go" data-g="s_menu">BACK</button></div></section>
+
+<section id="s_mp" class="scr"><div class="arch"><h2>MULTIPLAYER</h2>
+<input id="room" placeholder="Room code" maxlength="6">
+<button class="b" data-a="create">CREATE ROOM</button><button class="b" data-a="join">JOIN ROOM</button><button class="b" data-a="go" data-g="s_start">BACK</button><p id="mmsg" class="msg"></p></div></section>
+
+<section id="s_story" class="scr"><div class="arch wide"><h2>THE STORY</h2>
+<p class="txt">You were never meant to wake here. Nine circles of fire, ice and lies lie between you and the light.<br><br>Every floor is a promise. Every promise is a lie.<br><br>Survive the traps of Hell. Reach Heaven's Gate.</p><button class="b" data-a="go" data-g="s_how">NEXT</button></div></section>
+
+<section id="s_how" class="scr"><div class="arch wide"><h2>INSTRUCTIONS</h2>
+<p class="txt">MOVE: Arrow keys / A D &nbsp; JUMP: Up / W / Space<br>PAUSE: Esc / P &nbsp; (touch: on-screen buttons)<br><br>Reach the door to finish a level.<br>Nothing is safe: floors vanish, spikes hide, doors run.<br>Die and you restart the current level instantly.<br>5 levels per circle, 9 circles, then Heaven's Gate.</p><button class="b" data-a="begin">ENTER THE CIRCLES</button></div></section>
+
+<section id="s_hist" class="scr"><div class="arch wide"><h2>HISTORY</h2><p class="txt" id="histx"></p><button class="b" data-a="reset">RESET HISTORY</button><button class="b" data-a="go" data-g="s_menu">BACK</button></div></section>
+
+<section id="s_opts" class="scr"><div class="arch wide"><h2>OPTIONS</h2>
+<label>Music <input type="range" id="vm" min="0" max="1" step=".05"></label><label>Sound FX <input type="range" id="vs" min="0" max="1" step=".05"></label>
+<button class="b" data-a="back">BACK</button></div></section>
+
+<section id="s_pause" class="scr dim"><div class="arch"><h2>PAUSED</h2>
+<button class="b" data-a="resume">RESUME</button><button class="b" data-a="save">SAVE</button><button class="b" data-a="opts" data-r="s_pause">OPTIONS</button><button class="b" data-a="exit">EXIT TO MENU</button></div></section>
+
+<section id="s_end" class="scr gold"><h1>YOU ESCAPED HELL</h1></section>
+<section id="s_cred" class="scr blk" data-a="credx"><div id="roll"><h1>HELL'S PLAYGROUND</h1><p>A game by<br><b>A.C.J GAMES</b></p><p>Inspired by<br>Dante Alighieri's Inferno</p><p>Design &amp; Code<br><b>A.C.J GAMES</b></p><p>Music<br><b>Original score</b></p><p>Thank you for playing</p><p class="sm">(click to close)</p></div></section>
+<div id="rot">Rotate your device to landscape</div>
+<div id="toast"></div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="game.js"></script></body></html>

@@ -1,0 +1,43 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}
+html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:Impact,'Arial Black',sans-serif;color:#f4e6d0;touch-action:none}
+body{display:flex;align-items:center;justify-content:center}
+#app{position:relative;width:960px;height:540px;overflow:hidden;background:#000;font-size:16px}
+canvas{position:absolute;inset:0;width:100%;height:100%}
+#bg,#lc{pointer-events:none}
+.hide{display:none!important}
+.scr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s}
+.blk{background:#000}.dim{background:rgba(0,0,0,.65)}.gold{background:radial-gradient(#fff6c8,#e8b84a);color:#3a2400}
+.full{position:absolute;inset:0;width:100%;height:100%}
+#logo{width:40%;opacity:0;transition:opacity 1.6s}
+#devby{letter-spacing:.3em;font-size:1.1em;opacity:0;transition:opacity 1.2s;margin-top:1em;color:#b8bcc4}
+#lbar{position:absolute;left:21.5%;top:77.2%;width:57%;height:9.3%;background:linear-gradient(#2a1a1a,#140a0a);border:.3em solid #6b5252;border-radius:.4em;padding:.35em;box-shadow:0 0 1em #000}
+#lfill{display:block;height:100%;width:0;background:linear-gradient(#ff3a10,#ff9a20 60%,#ffcf50);box-shadow:0 0 1em #ff6a10}
+.arch{width:22em;max-width:90%;padding:1.2em 1.6em 1.4em;display:flex;flex-direction:column;gap:.55em;align-items:stretch;text-align:center;
+ background:linear-gradient(#3b3330,#1d1816);border:.35em solid #5a4c46;border-radius:9em 9em .8em .8em;box-shadow:0 0 3em #000,inset 0 0 2em #000}
+.arch.wide{width:34em;border-radius:3em 3em .8em .8em}
+h1{margin:.3em 0 .1em;font-size:2.1em;line-height:.95;color:#ff6a1c;text-shadow:0 .08em 0 #4a0800,0 0 .6em #ff3a00;letter-spacing:.04em}
+h2{margin:.2em 0;font-size:1.5em;color:#ffb347;letter-spacing:.1em}
+.who{margin:0;color:#c9b9a0;font-size:.9em;font-family:Arial,sans-serif}
+.txt{font-family:Georgia,serif;font-size:1em;line-height:1.5;margin:.3em 0}
+.msg{font-family:Arial,sans-serif;font-size:.8em;color:#d9b38a;margin:.2em 0 0;min-height:1.2em}
+.b,#hud button,#touch button{font-family:inherit;font-size:1.05em;letter-spacing:.12em;color:#ffe2b8;cursor:pointer;padding:.55em .8em;
+ background:linear-gradient(#7a2a12,#431206);border:.15em solid #a8481c;border-radius:.3em;box-shadow:0 .15em 0 #1a0400}
+.b:hover{background:linear-gradient(#b8401a,#6a1c08);box-shadow:0 0 1em #ff5a10}
+.b:active{transform:translateY(.1em)}
+input{font-family:Arial,sans-serif;font-size:1em;padding:.55em;border-radius:.3em;border:.12em solid #5a4c46;background:#120d0b;color:#f4e6d0;text-align:center;user-select:text}
+label{display:flex;justify-content:space-between;align-items:center;gap:1em;font-size:1.1em}
+input[type=range]{flex:1;padding:0}
+#hud{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:.6em .8em;pointer-events:none;font-size:1em;text-shadow:0 0 .4em #000,0 .1em 0 #000;letter-spacing:.1em}
+#hud span:last-child{pointer-events:auto;display:flex;gap:.5em}
+#hud button{padding:.3em .8em;font-size:.9em}
+#touch{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;padding:1em 1.4em;pointer-events:none}
+#touch>div{display:flex;gap:1em}
+#touch button{pointer-events:auto;width:4.6em;height:4.6em;border-radius:50%;font-size:1.3em;opacity:.7;padding:0}
+#roll{text-align:center;animation:roll 38s linear forwards;font-size:1.2em;line-height:1.6;position:absolute;top:100%;width:100%}
+#roll p{margin:2.4em 0;font-family:Georgia,serif}#roll b{color:#ffb347;font-family:Impact,sans-serif;font-size:1.3em}.sm{font-size:.7em;color:#888}
+@keyframes roll{to{top:-120%}}
+#rot{display:none;position:fixed;inset:0;background:#000;color:#ffb347;align-items:center;justify-content:center;font-size:6vw;text-align:center;z-index:99}
+@media(orientation:portrait){#rot.on{display:flex}}
+@media(pointer:fine){#touch{display:none!important}}
+#toast{position:absolute;bottom:12%;left:50%;transform:translateX(-50%);background:#000c;padding:.5em 1em;border-radius:.4em;opacity:0;transition:opacity .4s;font-family:Arial,sans-serif}
+.b.alt{font-size:.8em;padding:.4em;background:#2a1c18;border-color:#5a4c46}
